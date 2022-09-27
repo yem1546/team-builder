@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import './App.css';
 import Form from "./Form"
+import Member from "./Member"
 
 const initialFormValues = {
   name: '',
@@ -46,6 +47,11 @@ export default function App() {
     <div className="App">
       <header className="App-header">
         <Form update={updateForm} submit={submitForm} values={formValues}/>
+        {teamList.map((mem, i) => {
+          return(
+            <Member member={mem}/>
+          )
+        })}
       </header>
     </div>
   );
